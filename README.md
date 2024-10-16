@@ -1,4 +1,4 @@
-# padel_square_app
+# Smash
 
 A new Flutter project.
 
