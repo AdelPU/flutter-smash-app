@@ -1,0 +1,44 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.padel_square_app"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"  // Ensure this matches JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.padel_square_app"  // Ensure this is unique
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug  // Replace with your own signing config for production
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Path to your Flutter project
+}
+
+dependencies {
+    // Ensure Kotlin standard library matches the Kotlin plugin version defined in project-level build.gradle
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
